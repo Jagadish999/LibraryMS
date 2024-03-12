@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  navigationList: any = [
+    {
+      navigationUrl: "/dashboard/customer",
+      navigationName: "Customer",
+      icon: "account_circle"
+    },
+    {
+      navigationUrl: "/dashboard/book",
+      navigationName: "Book",
+      icon: "book"
+    }
+  ];
+  
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  logout(){
+    localStorage.removeItem('user');
+
+    this.router.navigate(['login']);
+  }
 }

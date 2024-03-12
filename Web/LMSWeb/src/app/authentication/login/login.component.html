@@ -1,1 +1,15 @@
-<p>login works!</p>
+<main>
+    <section>
+        <form class="auth-form">
+            <h1>Login</h1>
+            <mat-form-field>
+                <input matInput placeholder="Email" name="email" [(ngModel)]="formObject.emailAddress">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput maxlength="20" name="password" placeholder="Password" [(ngModel)]="formObject.password">
+            </mat-form-field>
+        </form>
+
+        <button mat-raised-button (click)="login()">Submit</button>
+    </section>
+</main>

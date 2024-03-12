@@ -1,1 +1,37 @@
-<p>navigation works!</p>
+<div class="main-wrapper">
+
+    <p class="all-heading">
+        <mat-toolbar color="primary">
+            <button mat-icon-button
+                (click)="drawer.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="mainheader">Library Management System</span>
+            <span class="spacer"></span>
+    
+            <button (click)="logout()">
+                Log Out
+            </button>
+        </mat-toolbar>
+    </p>
+    
+    <mat-drawer-container class="main-container" autosize>
+        
+        <mat-drawer #drawer class="sidenav" mode="side">
+            <mat-list role="list" *ngFor="let item of navigationList">
+                <mat-list-item role="listitem">
+                    <a routerLink="{{item.navigationUrl}}">
+                        <mat-icon>{{item.icon}}</mat-icon>
+                        {{item.navigationName}}
+                    </a>
+                </mat-list-item>
+            </mat-list>
+        </mat-drawer>
+    
+        <div class="sidenav-content">
+            <router-outlet></router-outlet>
+        </div>
+    
+    </mat-drawer-container>
+
+</div>

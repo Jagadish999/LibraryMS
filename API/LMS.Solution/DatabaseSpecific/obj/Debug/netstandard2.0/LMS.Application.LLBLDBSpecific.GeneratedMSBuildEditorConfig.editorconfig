@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = LMS.Application.LLBL.DatabaseSpecific
+build_property.ProjectDir = F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseSpecific\LMS.Application.LLBLDBSpecific.csproj" />
+    <ProjectReference Include="..\LMS.Application.Model\LMS.Application.Model.csproj" />
+  </ItemGroup>
+
+</Project>

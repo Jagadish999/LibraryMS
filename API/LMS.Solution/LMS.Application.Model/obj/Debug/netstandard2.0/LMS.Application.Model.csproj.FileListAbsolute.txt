@@ -1,0 +1,11 @@
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\bin\Debug\netstandard2.0\LMS.Application.Model.deps.json
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\bin\Debug\netstandard2.0\LMS.Application.Model.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\bin\Debug\netstandard2.0\LMS.Application.Model.pdb
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.csproj.AssemblyReference.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.GeneratedMSBuildEditorConfig.editorconfig
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.AssemblyInfoInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.AssemblyInfo.cs
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.csproj.CoreCompileInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.sourcelink.json
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Model\obj\Debug\netstandard2.0\LMS.Application.Model.pdb

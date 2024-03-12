@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "S+Qa+jqph0cG1gN80BZFVF1uDsT8r64zSQAQRFCnK7fhIunETWBVAWqM0WqMwopcF6rFFIAiaSkN24ohhVokBA==",
+  "success": true,
+  "projectFilePath": "F:\\Github\\LibraryMS\\API\\LMS.Solution\\DatabaseGeneric\\LMS.Application.LLBL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jagadish\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Jagadish\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Jagadish\\.nuget\\packages\\sd.llblgen.pro.ormsupportclasses\\5.9.0\\sd.llblgen.pro.ormsupportclasses.5.9.0.nupkg.sha512"
+  ],
+  "logs": []
+}

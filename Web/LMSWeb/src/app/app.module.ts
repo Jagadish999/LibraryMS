@@ -4,19 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './layout/navigation/navigation.component';
-import { LoginComponent } from './authentication/login/login.component';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { NavigationModule } from './layout/navigation/navigation.module';
+import { ErrorModule } from './view/error/error.module';
+import { CustomerModule } from './view/customer/customer.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavigationComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthenticationModule,
+    NavigationModule,
+    ErrorModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

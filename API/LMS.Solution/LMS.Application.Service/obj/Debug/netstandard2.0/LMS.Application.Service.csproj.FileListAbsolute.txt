@@ -1,0 +1,17 @@
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.Service.deps.json
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.Service.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.Service.pdb
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.Model.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.pdb
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.dll.config
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\bin\Debug\netstandard2.0\LMS.Application.Model.pdb
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.csproj.AssemblyReference.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.AssemblyInfoInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.AssemblyInfo.cs
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.csproj.CoreCompileInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.sourcelink.json
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.csproj.CopyComplete
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.dll
+F:\Github\LibraryMS\API\LMS.Solution\LMS.Application.Service\obj\Debug\netstandard2.0\LMS.Application.Service.pdb

@@ -1,0 +1,55 @@
+<form>
+    <p>
+        <mat-form-field appearance="fill">
+
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" name="fullName" [(ngModel)]="formObject.fullName" />
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="User Name" name="userName" [(ngModel)]="formObject.userName" />
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+
+            <mat-label>Email Address</mat-label>
+            <input matInput placeholder="Email" name="email" [(ngModel)]="formObject.email" />
+        </mat-form-field>
+    </p>
+
+
+    <p>
+        <mat-form-field appearance="fill">
+
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" name="password" [(ngModel)]="formObject.password" />
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" name="phone" [(ngModel)]="formObject.phone" />
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-label>Membership</mat-label>
+        <mat-select [(ngModel)]="selectedMembershipType" name="membershipType">
+            <mat-option *ngFor="let type of typeDetail" [value]="type.memberType" (click)="paymentOptSel(type.memberType)">
+                {{ type.memberType }}
+            </mat-option>
+        </mat-select>
+    </p>
+
+</form>
+
+<button (click)="save()">Save</button>
+<button [mat-dialog-close]="">Close</button>

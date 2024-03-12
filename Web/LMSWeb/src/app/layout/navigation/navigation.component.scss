@@ -1,0 +1,26 @@
+.mainheader{
+    text-align: center;
+    width: 100%;
+    font-size: 28px;
+}
+
+.main-container {
+    width: 100%;
+    height: 80vh;
+    border: 5px solid black;
+}
+
+.sidenav {
+    width: 20%;
+    padding: 20px;
+}
+
+.sidenav-content {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

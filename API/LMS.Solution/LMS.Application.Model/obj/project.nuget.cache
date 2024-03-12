@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "xmAGRpqnn5FAAAQyoKee8l5AG11WcHE2NKSBkiOIe6eSNMP8laPRs/btfNiwBLZ0YjVzIoTuad3Mpcw+c4wb7Q==",
+  "success": true,
+  "projectFilePath": "F:\\Github\\LibraryMS\\API\\LMS.Solution\\LMS.Application.Model\\LMS.Application.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jagadish\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Jagadish\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

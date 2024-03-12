@@ -1,0 +1,12 @@
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.dll.config
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.deps.json
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.dll
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\bin\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.pdb
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.csproj.AssemblyReference.cache
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.GeneratedMSBuildEditorConfig.editorconfig
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.AssemblyInfoInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.AssemblyInfo.cs
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.csproj.CoreCompileInputs.cache
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.sourcelink.json
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.dll
+F:\Github\LibraryMS\API\LMS.Solution\DatabaseSpecific\obj\Debug\netstandard2.0\LMS.Application.LLBLDBSpecific.pdb
