@@ -8,6 +8,10 @@ namespace LMS.Application.Service.Common
     {
 
         string getCustomerTblDetail(String Json);
+
+        string getCustomerBorrowedBooks(String Json);
+
+        string getCustomerSpecificPayment(String Json);
     }
 
 

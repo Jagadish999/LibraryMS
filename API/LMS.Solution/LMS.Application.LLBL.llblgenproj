@@ -150,12 +150,47 @@
     </TargetElement>
   </CodeGenerationMetaDataDefaults>
   <SPCallDefinitions>
+    <SPCallDefinition Name="SpBookDetailTsk" ObjectID="6856df25-7f08-4ba2-b0cd-928d53a77436">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" Direction="3" />
+      </Parameters>
+    </SPCallDefinition>
     <SPCallDefinition Name="SpBookSel" ObjectID="35561d90-df29-4c44-ab8c-fa1304c5669e">
       <Parameters>
         <Parameter Name="JsonParams" Type="string" MaxLength="2147483647" />
       </Parameters>
     </SPCallDefinition>
+    <SPCallDefinition Name="SpBorrowSel" ObjectID="377b12f3-1626-44c9-ab35-2a100ec946ae">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SpBorrowTransactionSel" ObjectID="d53123e8-c369-4bf6-9aaa-5a601c65b2fb">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SpBorrowTsk" ObjectID="e61223fa-680d-4a26-a703-e1139274353c">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" Direction="3" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SpCustomerBorrowedBooksSel" ObjectID="724667cb-23c5-400d-95a2-ca4a95fd40c1">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
     <SPCallDefinition Name="SpCustomerSel" ObjectID="54d52fca-6c93-443d-a5d4-e23c614e5db3">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SpCustPaymentInvoiceSel" ObjectID="2e62ca67-3327-4aa6-861a-b60ab429b9ef">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
+    <SPCallDefinition Name="SpPaymentInvoiceSel" ObjectID="29ec32f7-9504-408f-9f79-2132ffe1fbef">
       <Parameters>
         <Parameter Name="Json" Type="string" MaxLength="2147483647" />
       </Parameters>
@@ -186,8 +221,13 @@
       <Catalogs>
         <Catalog Name="Jagadish_LibraryMS">
           <Schemas>
-            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2024-03-12T11:25:55.0369378Z">
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2024-03-18T06:13:56.6271131Z">
               <StoredProcedures>
+                <StoredProcedure Name="SpBookDetailTsk">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="3" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                </StoredProcedure>
                 <StoredProcedure Name="SpBookSel" NumberOfResultsets="1">
                   <Parameters>
                     <Parameter Name="@JsonParams" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
@@ -200,7 +240,72 @@
                     </Resultset>
                   </Resultsets>
                 </StoredProcedure>
+                <StoredProcedure Name="SpBorrowSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SpBorrowTransactionSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SpBorrowTsk">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="3" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                </StoredProcedure>
+                <StoredProcedure Name="SpCustomerBorrowedBooksSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
                 <StoredProcedure Name="SpCustomerSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SpCustPaymentInvoiceSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SpPaymentInvoiceSel" NumberOfResultsets="1">
                   <Parameters>
                     <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
                   </Parameters>
@@ -241,12 +346,47 @@
       <EntityMappings />
       <TypedViewMappings />
       <SPCallMappings>
+        <SPCallMapping SPCallName=":SpBookDetailTsk" TargetName="Jagadish_LibraryMS:dbo:SpBookDetailTsk">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
         <SPCallMapping SPCallName=":SpBookSel" TargetName="Jagadish_LibraryMS:dbo:SpBookSel">
           <FieldMappings>
             <FieldMapping FieldName="JsonParams" TargetFieldName="@JsonParams" />
           </FieldMappings>
         </SPCallMapping>
+        <SPCallMapping SPCallName=":SpBorrowSel" TargetName="Jagadish_LibraryMS:dbo:SpBorrowSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpBorrowTransactionSel" TargetName="Jagadish_LibraryMS:dbo:SpBorrowTransactionSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpBorrowTsk" TargetName="Jagadish_LibraryMS:dbo:SpBorrowTsk">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpCustomerBorrowedBooksSel" TargetName="Jagadish_LibraryMS:dbo:SpCustomerBorrowedBooksSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
         <SPCallMapping SPCallName=":SpCustomerSel" TargetName="Jagadish_LibraryMS:dbo:SpCustomerSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpCustPaymentInvoiceSel" TargetName="Jagadish_LibraryMS:dbo:SpCustPaymentInvoiceSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpPaymentInvoiceSel" TargetName="Jagadish_LibraryMS:dbo:SpPaymentInvoiceSel">
           <FieldMappings>
             <FieldMapping FieldName="Json" TargetFieldName="@Json" />
           </FieldMappings>

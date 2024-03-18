@@ -101,8 +101,14 @@ CREATE TABLE dbo.[Borrow] (
 
 
 
-
+DROP TABLE dbo.Borrow;
+DROP TABLE dbo.Book;
+DROP TABLE dbo.CustomerMembership;
+DROP TABLE dbo.Payment;
+DROP TABLE dbo.Membership;
 DROP TABLE dbo.[User];
+DROP TABLE dbo.[ListItem];
+
 
 
 

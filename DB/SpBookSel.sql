@@ -18,7 +18,7 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 
-	        CREATE TABLE #Col
+	    CREATE TABLE #Col
         (
             ColID INT IDENTITY(1,1),
             [Name] VARCHAR(100)
@@ -31,8 +31,7 @@ BEGIN
         ('author'),
         ('genre'),
 		('quantity'),
-		('availableQuantity'),
-		('action');
+		('availableQuantity');
 
         DECLARE @Col VARCHAR(MAX);
 

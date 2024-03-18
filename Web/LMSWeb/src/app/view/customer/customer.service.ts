@@ -24,4 +24,7 @@ export class CustomerService {
     return this.http.get(this.apiUrl + 'Common/GetCustomerTblDetail', {params});
   }
 
+  // get formFiled required for adding customer
+  
+
 }

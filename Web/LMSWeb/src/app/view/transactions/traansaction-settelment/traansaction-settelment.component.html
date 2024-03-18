@@ -1,0 +1,14 @@
+
+<div class="inv-detail">
+    <p>User Name: {{transactionDetail.userName}}</p>
+    <p>Book Name: {{transactionDetail.bookTitle}}</p>
+    <p>Book Holded Days: {{ transactionDetail.holdingDays }}</p>
+    <p>Fine: Rs {{ transactionDetail.holdingDay > transactionDetail.allowedHolding ? ((transactionDetail.holdingDay - transactionDetail.allowedHolding) * transactionDetail.charge) : '0' }}</p>
+    
+</div>
+
+<div class="btn-lists">
+
+    <button (click)="bookReturned()" class="return">Return Book</button>
+    <button [mat-dialog-close]="" class="close">Close</button>
+</div>

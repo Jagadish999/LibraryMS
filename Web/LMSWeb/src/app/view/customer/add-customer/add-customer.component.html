@@ -1,55 +1,129 @@
-<form>
-    <p>
-        <mat-form-field appearance="fill">
+<!-- All User Details -->
+<mat-stepper [linear]="isLinear" #stepperr>
 
-            <mat-label>Full Name</mat-label>
-            <input matInput placeholder="Full Name" name="fullName" [(ngModel)]="formObject.fullName" />
-        </mat-form-field>
-    </p>
+    <mat-step [stepControl]="customerDetailForm_1">
+        <form [formGroup]="customerDetailForm_1">
+            <ng-template matStepLabel>Fill User Details</ng-template>
 
-    <p>
-        <mat-form-field appearance="fill">
+            <mat-form-field>
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="fullName" />
+                <mat-error>Enter Valid Name</mat-error>
+            </mat-form-field>
 
-            <mat-label>User Name</mat-label>
-            <input matInput placeholder="User Name" name="userName" [(ngModel)]="formObject.userName" />
-        </mat-form-field>
-    </p>
+            <mat-form-field>
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error>Enter Valid Email</mat-error>
+            </mat-form-field>
 
-    <p>
-        <mat-form-field appearance="fill">
+            <mat-form-field *ngIf="includePassword === true">
+                <mat-label >Password</mat-label>
+                <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password" />
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon>
+                        {{hidePassword ? "visibility_off" : "visibility_on"}}
+                    </mat-icon>
+                </button>
+                <mat-error>Password must be between 8 and 20 characters long</mat-error>
+            </mat-form-field>
 
-            <mat-label>Email Address</mat-label>
-            <input matInput placeholder="Email" name="email" [(ngModel)]="formObject.email" />
-        </mat-form-field>
-    </p>
+            <mat-form-field>
+                <mat-label>Accout Username</mat-label>
+                <input matInput formControlName="userName" />
+                <mat-error>Enter Valid User Name</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phone" />
+                <mat-error>Phone Must Be Number of 10 Digits</mat-error>
+            </mat-form-field>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" mat-button [disabled]="customerDetailForm_1.invalid"
+                    matStepperNext>Next</button>
+                <button [mat-dialog-close]="">Close</button>
+            </mat-card-actions>
 
 
-    <p>
-        <mat-form-field appearance="fill">
+        </form>
+    </mat-step>
 
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Password" name="password" [(ngModel)]="formObject.password" />
-        </mat-form-field>
-    </p>
+    <mat-step [stepControl]="customerDetailForm_2" label="Choose Membership">
 
-    <p>
-        <mat-form-field appearance="fill">
+        <form [formGroup]="customerDetailForm_2">
 
-            <mat-label>Phone Number</mat-label>
-            <input matInput placeholder="Phone Number" name="phone" [(ngModel)]="formObject.phone" />
-        </mat-form-field>
-    </p>
+            <mat-form-field>
+                <mat-label>Membership Type</mat-label>
+                <mat-select matSelect formControlName="membershipType">
+                    <mat-option *ngFor="let type of membershipTypes" [value]="type.membershipTypeName"
+                        (click)="membershipSel(type)">
+                        {{ type.membershipTypeName }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-    <p>
-        <mat-label>Membership</mat-label>
-        <mat-select [(ngModel)]="selectedMembershipType" name="membershipType">
-            <mat-option *ngFor="let type of typeDetail" [value]="type.memberType" (click)="paymentOptSel(type.memberType)">
-                {{ type.memberType }}
-            </mat-option>
-        </mat-select>
-    </p>
+            <div *ngIf="selectedMemberShip !== undefined" class="membership-invoice">
 
-</form>
+                <div class="wrapper">
+                    <div class="title">
+                        Membership Type:
+                    </div>
+                    <div class="value">
+                        {{selectedMemberShip.membershipTypeName}}
+                    </div>
+                </div>
 
-<button (click)="save()">Save</button>
-<button [mat-dialog-close]="">Close</button>
+                <div class="wrapper">
+                    <div class="title">
+                        Membership Fee:
+                    </div>
+                    <div class="value">
+                        {{selectedMemberShip.membershipFee}}
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="title">
+                        Membership Duration:
+                    </div>
+                    <div class="value">
+                        {{selectedMemberShip.membershipDuration}}
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="title">
+                        Late Return Charge:
+                    </div>
+                    <div class="value">
+                        {{selectedMemberShip.lateReturnCharge}}
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <div class="title">
+                        Max Borrow:
+                    </div>
+                    <div class="value">
+                        {{selectedMemberShip.maxBorrow}}
+                    </div>
+                </div>
+
+            </div>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" mat-button [disabled]="customerDetailForm_2.invalid"
+                    (click)="save()">Submit</button>
+                <button mat-button matStepperPrevious color="accent">Back</button>
+                <button [mat-dialog-close]="">Close</button>
+            </mat-card-actions>
+
+        </form>
+    </mat-step>
+
+</mat-stepper>
+
+
+

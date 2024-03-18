@@ -1,32 +1,70 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
+// .mat-icon {
+//     font-size: 20px;
+//     vertical-align: middle;
+//     margin-left: 5px;
+// }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-thead th {
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+.book-card {
+    width: 300px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    width: 80%;
+    height: 250px;
+}
+
+mat-card-content {
+    padding: 16px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+p {
+    margin: 0;
+}
+
+.title, .author, .genre, .quantity, .availableQuantity{
+    display: flex;
+    flex-direction: row;
+}
+
+.book-details {
+    // border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.titleHead {
+    width: 35%;
+    font-weight: bold;
+    border-right: 2px solid rgb(66, 62, 62);
 }
 
 
-tbody td {
-    border: 1px solid #ddd;
-    padding: 12px;
+.titleDetail{
+    width: 65%;
+    padding-left: 10px;
 }
 
 
-.delete:hover {
-    color: rgb(0, 255, 255);
-}
-
-
-mat-icon {
-    vertical-align: middle;
-}
-
-.mat-row.selected {
-    background-color: lightblue;
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
 }

@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Add Book</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content [formGroup]="bookDetailForm">
+         
+        <mat-form-field>
+            <mat-label>Book Title</mat-label>
+            <input matInput formControlName="title" />
+            <mat-error>Book Title Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input matInput formControlName="author" />
+            <mat-error>Book Authon Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Genre</mat-label>
+            <input matInput formControlName="genre" />
+            <mat-error>Book Genre Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Total Quantity</mat-label>
+            <input matInput formControlName="availableQuantity" />
+            <mat-error>Total Quantity Required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Available Quantity</mat-label>
+            <input matInput formControlName="totalQuantity" />
+            <mat-error>Available Quantity Required</mat-error>
+        </mat-form-field>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="bookDetailForm.invalid" (click)="save()">Save Book</button>
+            <button  [mat-dialog-close]="">Close</button>
+        </mat-card-actions>
+
+    </mat-card-content>
+</mat-card>

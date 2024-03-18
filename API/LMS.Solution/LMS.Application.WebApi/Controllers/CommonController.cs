@@ -29,5 +29,19 @@ namespace LMS.Application.WebApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet]
+        public IActionResult GetSpecificCustomerBrBooks(string Json)
+        {
+            try
+            {
+                var books = _commonService.getCustomerBorrowedBooks(Json);
+                return Ok(books);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

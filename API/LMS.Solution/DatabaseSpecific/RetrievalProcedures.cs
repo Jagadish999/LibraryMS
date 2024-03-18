@@ -63,6 +63,138 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 			return CreateSpBookSelCall(dataAccessProvider, jsonParams).ToRetrievalQuery();
 		}
 
+		/// <summary>Calls stored procedure 'SpBorrowSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpBorrowSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpBorrowSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpBorrowSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpBorrowSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpBorrowSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpBorrowSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpBorrowSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpBorrowSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpBorrowSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpBorrowSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTransactionSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpBorrowTransactionSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpBorrowTransactionSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTransactionSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpBorrowTransactionSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpBorrowTransactionSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpBorrowTransactionSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpBorrowTransactionSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpBorrowTransactionSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpBorrowTransactionSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpBorrowTransactionSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpBorrowTransactionSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
+		/// <summary>Calls stored procedure 'SpCustomerBorrowedBooksSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpCustomerBorrowedBooksSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpCustomerBorrowedBooksSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpCustomerBorrowedBooksSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpCustomerBorrowedBooksSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpCustomerBorrowedBooksSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpCustomerBorrowedBooksSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpCustomerBorrowedBooksSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpCustomerBorrowedBooksSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpCustomerBorrowedBooksSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpCustomerBorrowedBooksSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpCustomerBorrowedBooksSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
 		/// <summary>Calls stored procedure 'SpCustomerSel'.<br/><br/></summary>
 		/// <param name="json">Input parameter. </param>
 		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
@@ -105,6 +237,94 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 		public static IRetrievalQuery GetSpCustomerSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
 		{
 			return CreateSpCustomerSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
+		/// <summary>Calls stored procedure 'SpCustPaymentInvoiceSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpCustPaymentInvoiceSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpCustPaymentInvoiceSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpCustPaymentInvoiceSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpCustPaymentInvoiceSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpCustPaymentInvoiceSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpCustPaymentInvoiceSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpCustPaymentInvoiceSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpCustPaymentInvoiceSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpCustPaymentInvoiceSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpCustPaymentInvoiceSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpCustPaymentInvoiceSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
+		/// <summary>Calls stored procedure 'SpPaymentInvoiceSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpPaymentInvoiceSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpPaymentInvoiceSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpPaymentInvoiceSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpPaymentInvoiceSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpPaymentInvoiceSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpPaymentInvoiceSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpPaymentInvoiceSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpPaymentInvoiceSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpPaymentInvoiceSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpPaymentInvoiceSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpPaymentInvoiceSelCall(dataAccessProvider, json).ToRetrievalQuery();
 		}
 
 		/// <summary>Calls stored procedure 'SpUserSel'.<br/><br/></summary>
@@ -161,6 +381,36 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 							.AddParameter("@JsonParams", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, jsonParams);
 		}
 
+		/// <summary>Creates the call object for the call 'SpBorrowSel' to stored procedure 'SpBorrowSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpBorrowSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpBorrowSel]", "SpBorrowSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpBorrowTransactionSel' to stored procedure 'SpBorrowTransactionSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpBorrowTransactionSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpBorrowTransactionSel]", "SpBorrowTransactionSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpCustomerBorrowedBooksSel' to stored procedure 'SpCustomerBorrowedBooksSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpCustomerBorrowedBooksSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpCustomerBorrowedBooksSel]", "SpCustomerBorrowedBooksSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
 		/// <summary>Creates the call object for the call 'SpCustomerSel' to stored procedure 'SpCustomerSel'.</summary>
 		/// <param name="dataAccessProvider">The data access provider.</param>
 		/// <param name="json">Input parameter</param>
@@ -168,6 +418,26 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 		private static StoredProcedureCall CreateSpCustomerSelCall(IDataAccessCore dataAccessProvider, System.String json)
 		{
 			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpCustomerSel]", "SpCustomerSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpCustPaymentInvoiceSel' to stored procedure 'SpCustPaymentInvoiceSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpCustPaymentInvoiceSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpCustPaymentInvoiceSel]", "SpCustPaymentInvoiceSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpPaymentInvoiceSel' to stored procedure 'SpPaymentInvoiceSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpPaymentInvoiceSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpPaymentInvoiceSel]", "SpPaymentInvoiceSel")
 							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
 		}
 

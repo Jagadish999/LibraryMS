@@ -11,9 +11,14 @@ export class BookService {
 
   constructor(public http: HttpClient) { }
 
-  getAllBooks(json: any): Observable<any>{
+  getAllBooks(json: any): Observable<any> {
 
     const params = new HttpParams().set('json', JSON.stringify(json));
-    return this.http.get(this.apiUrl + 'Book/GetBookDetils', {params});
+    return this.http.get(this.apiUrl + 'Book/GetBookDetils', { params });
+  }
+
+  setBook(json: any): Observable<any> {
+
+    return this.http.post(this.apiUrl + 'Book/SetBookTsk', { json: JSON.stringify(json) })
   }
 }

@@ -1,5 +1,7 @@
 using LMS.Application.Service.Book;
+using LMS.Application.Service.Borrow;
 using LMS.Application.Service.Common;
+using LMS.Application.Service.Payment;
 using LMS.Application.Service.User;
 using SD.LLBLGen.Pro.DQE.SqlServer;
 using SD.LLBLGen.Pro.ORMSupportClasses;
@@ -16,6 +18,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICommonService, CommonService>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IBorrowService, BorrowService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 
 builder.Services.AddCors((setup) =>
 {

@@ -10,6 +10,19 @@ namespace LMS.Application.Service.Book
 {
     public class BookService : IBookService
     {
+        public string bookTsk(string json)
+        {
+            using(var adapter = DataAccessHelper.GetAdapter())
+            {
+                string param = json;
+
+                ActionProcedures.SpBookDetailTsk(ref json, adapter);
+                adapter.CloseConnection();
+            }
+
+            return json;
+        }
+
         public string getBookSel(string Json)
         {
 

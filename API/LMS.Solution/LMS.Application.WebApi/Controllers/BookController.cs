@@ -1,4 +1,5 @@
-﻿using LMS.Application.Service.Book;
+﻿using LMS.Application.Model;
+using LMS.Application.Service.Book;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LMS.Application.WebApi.Controllers
@@ -22,6 +23,20 @@ namespace LMS.Application.WebApi.Controllers
             {
                 var bookDetail = _bookService.getBookSel(Json);
                 return Ok(bookDetail);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult SetBookTsk([FromBody] MvJson json)
+        {
+            try
+            {
+                var book = _bookService.bookTsk(json.Json);
+                return Ok(book);
             }
             catch (Exception ex)
             {

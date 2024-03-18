@@ -10,6 +10,23 @@ namespace LMS.Application.Service.Common
 {
     public class CommonService : ICommonService
     {
+        public string getCustomerBorrowedBooks(string Json)
+        {
+            var customerBooks = DataAccessHelper.FetchDerivedModel<MvJson>(RetrievalProcedures.GetSpCustomerBorrowedBooksSelCallAsQuery(Json))?.FirstOrDefault();
+
+            if (customerBooks == null)
+            {
+                return "{}";
+            }
+
+            return customerBooks.Json;
+        }
+
+        public string getCustomerSpecificPayment(string Json)
+        {
+            throw new NotImplementedException();
+        }
+
         public string getCustomerTblDetail(string Json)
         {
             var customerTblDetail = DataAccessHelper.FetchDerivedModel<MvJson>(RetrievalProcedures.GetSpCustomerSelCallAsQuery(Json))?.FirstOrDefault();

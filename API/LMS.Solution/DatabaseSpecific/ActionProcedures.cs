@@ -16,8 +16,120 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 	/// <summary>Class which contains the static logic to execute action stored procedures in the database.</summary>
 	public static partial class ActionProcedures
 	{
+		/// <summary>Delegate definition for stored procedure 'SpBookDetailTsk' to be used in combination of a UnitOfWork2 object.</summary>
+		public delegate int SpBookDetailTskCallBack(ref System.String json, IDataAccessCore dataAccessProvider);
+		/// <summary>Delegate definition for stored procedure 'SpBorrowTsk' to be used in combination of a UnitOfWork2 object.</summary>
+		public delegate int SpBorrowTskCallBack(ref System.String json, IDataAccessCore dataAccessProvider);
 		/// <summary>Delegate definition for stored procedure 'SpUserCustomerTsk' to be used in combination of a UnitOfWork2 object.</summary>
 		public delegate int SpUserCustomerTskCallBack(ref System.String json, IDataAccessCore dataAccessProvider);
+
+		/// <summary>Calls stored procedure 'SpBookDetailTsk'.<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <returns>Number of rows affected, if the database / routine doesn't suppress rowcounting.</returns>
+		public static int SpBookDetailTsk(ref System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpBookDetailTsk(ref json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBookDetailTsk'.<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>Number of rows affected, if the database / routine doesn't suppress rowcounting.</returns>
+		public static int SpBookDetailTsk(ref System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(var call = CreateSpBookDetailTskCall(dataAccessProvider, json))
+			{
+				int toReturn = call.Call();
+				json = call.GetParameterValue<System.String>(0);
+				return toReturn;
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBookDetailTsk'. Async variant<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <param name="cancellationToken">The cancellationtoken to be used</param>
+		/// <returns>SpBookDetailTskResult instance with the number of rows affected, if the database / routine doesn't suppress rowcounting, as well the value of each output parameter</returns>
+		public static async Task<SpBookDetailTskResult> SpBookDetailTskAsync(System.String json, CancellationToken cancellationToken)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				var toReturn = await SpBookDetailTskAsync(json, dataAccessProvider, cancellationToken).ConfigureAwait(false);
+				return toReturn;
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBookDetailTsk'. Async variant<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="cancellationToken">The cancellationtoken to be used</param>
+		/// <returns>SpBookDetailTskResult instance with the number of rows affected, if the database / routine doesn't suppress rowcounting, as well the value of each output parameter</returns>
+		public static async Task<SpBookDetailTskResult> SpBookDetailTskAsync(System.String json, IDataAccessCore dataAccessProvider, CancellationToken cancellationToken)
+		{
+			using(var call = CreateSpBookDetailTskCall(dataAccessProvider, json))
+			{
+				int _procReturnValue = await call.CallAsync(cancellationToken).ConfigureAwait(false);
+				var toReturn = new SpBookDetailTskResult();
+				toReturn.Json = call.GetParameterValue<System.String>(0);
+				toReturn.Proc__ReturnValue = _procReturnValue;
+				return toReturn;
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTsk'.<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <returns>Number of rows affected, if the database / routine doesn't suppress rowcounting.</returns>
+		public static int SpBorrowTsk(ref System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpBorrowTsk(ref json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTsk'.<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>Number of rows affected, if the database / routine doesn't suppress rowcounting.</returns>
+		public static int SpBorrowTsk(ref System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(var call = CreateSpBorrowTskCall(dataAccessProvider, json))
+			{
+				int toReturn = call.Call();
+				json = call.GetParameterValue<System.String>(0);
+				return toReturn;
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTsk'. Async variant<br/><br/></summary>
+		/// <param name="json">InputOutput parameter. </param>
+		/// <param name="cancellationToken">The cancellationtoken to be used</param>
+		/// <returns>SpBorrowTskResult instance with the number of rows affected, if the database / routine doesn't suppress rowcounting, as well the value of each output parameter</returns>
+		public static async Task<SpBorrowTskResult> SpBorrowTskAsync(System.String json, CancellationToken cancellationToken)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				var toReturn = await SpBorrowTskAsync(json, dataAccessProvider, cancellationToken).ConfigureAwait(false);
+				return toReturn;
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpBorrowTsk'. Async variant<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="cancellationToken">The cancellationtoken to be used</param>
+		/// <returns>SpBorrowTskResult instance with the number of rows affected, if the database / routine doesn't suppress rowcounting, as well the value of each output parameter</returns>
+		public static async Task<SpBorrowTskResult> SpBorrowTskAsync(System.String json, IDataAccessCore dataAccessProvider, CancellationToken cancellationToken)
+		{
+			using(var call = CreateSpBorrowTskCall(dataAccessProvider, json))
+			{
+				int _procReturnValue = await call.CallAsync(cancellationToken).ConfigureAwait(false);
+				var toReturn = new SpBorrowTskResult();
+				toReturn.Json = call.GetParameterValue<System.String>(0);
+				toReturn.Proc__ReturnValue = _procReturnValue;
+				return toReturn;
+			}
+		}
 
 		/// <summary>Calls stored procedure 'SpUserCustomerTsk'.<br/><br/></summary>
 		/// <param name="json">InputOutput parameter. </param>
@@ -73,6 +185,26 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 			}
 		}
 
+		/// <summary>Creates the call object for the call 'SpBookDetailTsk' to stored procedure 'SpBookDetailTsk'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">InputOutput parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpBookDetailTskCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpBookDetailTsk]", "SpBookDetailTsk")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.InputOutput, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpBorrowTsk' to stored procedure 'SpBorrowTsk'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">InputOutput parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpBorrowTskCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpBorrowTsk]", "SpBorrowTsk")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.InputOutput, true, 0, 0, json);
+		}
+
 		/// <summary>Creates the call object for the call 'SpUserCustomerTsk' to stored procedure 'SpUserCustomerTsk'.</summary>
 		/// <param name="dataAccessProvider">The data access provider.</param>
 		/// <param name="json">InputOutput parameter</param>
@@ -83,6 +215,24 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.InputOutput, true, 0, 0, json);
 		}
 
+
+		/// <summary>Return value struct for the async method SpBookDetailTskAsync().</summary>
+		public struct SpBookDetailTskResult
+		{
+			/// <summary>The value returned in the output parameter Json</summary>
+			public System.String Json { get; set; }
+			/// <summary>The number of rows affected, if the database / routine doesn't suppress rowcounting</summary>
+			public int Proc__ReturnValue { get; set; }
+		}
+
+		/// <summary>Return value struct for the async method SpBorrowTskAsync().</summary>
+		public struct SpBorrowTskResult
+		{
+			/// <summary>The value returned in the output parameter Json</summary>
+			public System.String Json { get; set; }
+			/// <summary>The number of rows affected, if the database / routine doesn't suppress rowcounting</summary>
+			public int Proc__ReturnValue { get; set; }
+		}
 
 		/// <summary>Return value struct for the async method SpUserCustomerTskAsync().</summary>
 		public struct SpUserCustomerTskResult

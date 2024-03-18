@@ -8,10 +8,8 @@
             </button>
             <span class="mainheader">Library Management System</span>
             <span class="spacer"></span>
-    
-            <button (click)="logout()">
-                Log Out
-            </button>
+            
+            <span class="logout-tbl" (click)="logout()"> <mat-icon>exit_to_app</mat-icon> Log Out</span>
         </mat-toolbar>
     </p>
     
@@ -29,6 +27,7 @@
         </mat-drawer>
     
         <div class="sidenav-content">
+
             <router-outlet></router-outlet>
         </div>
     

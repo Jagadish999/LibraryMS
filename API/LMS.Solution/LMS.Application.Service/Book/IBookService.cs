@@ -7,5 +7,7 @@ namespace LMS.Application.Service.Book
     public interface IBookService
     {
         string getBookSel(string json);
+
+        string bookTsk(string json);
     }
 }

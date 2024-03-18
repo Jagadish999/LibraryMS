@@ -1,31 +1,39 @@
-main {
-    margin-top: 100px;
+.mat-card {
+    position: absolute;
+    padding: 40px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.28);
+
+    .mat-card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .mat-card-title {
+            margin-top: 30px;
+            font-size: 28px;
+        }
+    }
+}
+
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+    
+}
+
+
+.mat-card-actions {
+    
     display: flex;
+    flex-direction: row;
     justify-content: center;
 
-    section {
-        width:30%;
-
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-            border: 2px solid black;
-        }
-
-        button {
-
-            margin-top: 20px;
-
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    button {
+        width: 80%;
+        font-size: 20px;
     }
 }
