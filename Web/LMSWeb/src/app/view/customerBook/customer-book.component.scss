@@ -1,49 +1,100 @@
-button {
+.book-wrapper{
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+
+
+    h2{
+        margin-bottom: 20px;
+        color: #333;
+        margin-left: 3%;
+        font-weight: bolder;
+    }
+}
+
+.container {
     display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-button:hover {
-    background-color: #0056b3;
+.book-card {
+    width: 300px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-mat-icon {
-    margin-right: 8px;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    width: 80%;
+    height: 250px;
 }
 
-.mat-elevation-z8 {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+mat-card-content {
+    padding: 16px;
 }
 
-th {
-    background-color: #df99bc;
-    padding: 12px;
-    text-align: left;
-    font-size: 20px;
+h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+p {
+    margin: 0;
+}
+
+.title, .author, .genre, .quantity, .availableQuantity{
+    display: flex;
+    flex-direction: row;
+}
+
+.book-details {
+    margin-bottom: 20px;
+}
+
+.titleHead {
+    width: 35%;
     font-weight: bold;
-    color: #333;
-    border-bottom: 2px solid #ccc;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgb(66, 62, 62);
 }
 
-td {
-    border-top: 1px solid #ddd;
-    padding: 12px;
+
+.titleDetail{
+    width: 65%;
+    padding-left: 10px;
 }
+
+
+.add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+}
+
 
 .action-button {
-    margin-right: 8px;
+    margin-top: 8px;
+    color: #fff;
+    background-color: #1976d2;
+    border: 1px solid #1976d2;
+    border-radius: 4px; 
+    padding: 4px 16px;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.selected {
-    background-color: #e0e0e0;
+.action-button mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.mat-paginator-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }

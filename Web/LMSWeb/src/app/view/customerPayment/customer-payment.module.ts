@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { CustomerPaymentRoutingModule } from './customer-payment-routing.module';
 import { CustomerPaymentComponent } from './customer-payment.component';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { CustomerPaymentComponent } from './customer-payment.component';
   ],
   imports: [
     CommonModule,
-    CustomerPaymentRoutingModule
+    CustomerPaymentRoutingModule,
+    MatIconModule,
+    MatTableModule
   ]
 })
 export class CustomerPaymentModule { }

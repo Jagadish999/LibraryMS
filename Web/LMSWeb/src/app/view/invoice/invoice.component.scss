@@ -1,49 +1,65 @@
-button {
+
+.invoice-wrapper {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: #ffffff;
+}
+
+.invoice-wrapper h2 {
+    margin-bottom: 20px;
+    color: #333;
+    margin-left: 3%;
+    font-weight: bolder;
+}
+
+.invoice-wrapper table {
+    width: 100%;
+    box-shadow: none;
+    border-collapse: collapse;
+}
+
+.invoice-wrapper th{
+    background-color: rgba(33, 33, 33, 0.8);
+    color: #fff
+}
+
+.invoice-wrapper tr:nth-child(odd) {
+    background-color: rgba(33,33,33,0.3);
+}
+
+.invoice-wrapper tr:nth-child(even) {
+    background-color: rgba(33,33,33,0.15);
+}
+
+.invoice-wrapper .action-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: #1976d2;
 }
 
-button:hover {
-    background-color: #0056b3;
+.invoice-wrapper .action-button mat-icon {
+    margin-right: 5px;
 }
 
-mat-icon {
-    margin-right: 8px;
-}
-
-.mat-elevation-z8 {
-    width: 100%;
-    border-collapse: collapse;
+.invoice-wrapper .mat-paginator-wrapper {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-th {
-    background-color: #df99bc;
-    padding: 12px;
-    text-align: left;
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    border-bottom: 2px solid #ccc;
-    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+.invoice-wrapper .add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
 }
 
-td {
-    border-top: 1px solid #ddd;
-    padding: 12px;
-}
-
-.action-button {
-    margin-right: 8px;
-}
-
-.selected {
-    background-color: #e0e0e0;
+.mat-paginator-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }

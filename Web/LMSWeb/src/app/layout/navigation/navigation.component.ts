@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,10 +8,12 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
 
-  //----
-  @ViewChild('drawer') drawer!: MatDrawer;
-  sidenavOpened = false;
-  //---
+
+  shortSideNav: boolean = false;
+  selectedIndex: any;
+
+  navClassName: string = 'side-nav long-width-nav';
+  mainContentClassName: string = 'main-content short-width-main';
 
   navigationList: any = [];
 
@@ -22,49 +23,49 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
 
     this.getNavigation();
-
-    console.log(MatDrawer)
-    
+    this.initializeData();
   }
 
-  getNavigation(){
+  initializeData() {
+    this.shortSideNav = false;
+  }
 
-    console.log(localStorage.getItem('user'));
+  getNavigation() {
 
     const currentUser: any = localStorage.getItem('user');
     const currentUserType = JSON.parse(currentUser).userType;
 
-    if(currentUserType === 'ADMIN'){
+    if (currentUserType === 'ADMIN') {
 
       this.navigationList = [
-      {
-        navigationUrl: "/navigation/customer",
-        navigationName: "Customer",
-        icon: "account_circle"
-      },
-      {
-        navigationUrl: "/navigation/book",
-        navigationName: "Book",
-        icon: "book"
-      },
-      {
-        navigationUrl: "/navigation/borrow",
-        navigationName: "Borrow",
-        icon: "handshake"
-      },
-      {
-        navigationUrl: "/navigation/transaction",
-        navigationName: "Transaction",
-        icon: "monetization_on"
-      },
-      {
-        navigationUrl: "/navigation/invoice",
-        navigationName: "Invoice",
-        icon: "receipt"
-      }
-    ];
+        {
+          navigationUrl: "/navigation/dashboard",
+          navigationName: "Dashboard",
+          icon: "dashboard"
+        },
+        {
+          navigationUrl: "/navigation/customer",
+          navigationName: "Customer",
+          icon: "account_circle"
+        },
+        {
+          navigationUrl: "/navigation/book",
+          navigationName: "Book",
+          icon: "book"
+        },
+        {
+          navigationUrl: "/navigation/transaction",
+          navigationName: "Transaction",
+          icon: "monetization_on"
+        },
+        {
+          navigationUrl: "/navigation/invoice",
+          navigationName: "Invoice",
+          icon: "receipt"
+        }
+      ];
     }
-    else if(currentUserType === 'REGULAR'){
+    else if (currentUserType === 'REGULAR') {
       this.navigationList = [
         {
           navigationUrl: "/navigation/customer-payment",
@@ -87,17 +88,25 @@ export class NavigationComponent implements OnInit {
   }
 
 
-  //---
+  // Change side nav to large and small
+  changeSideNavSize() {
 
-  toggleSidenav() {
-    this.sidenavOpened = !this.sidenavOpened;
-    if (!this.sidenavOpened) {
-      // Close the sidenav when it's hidden
-      this.drawer.close();
+    this.shortSideNav = !this.shortSideNav;
+
+
+    if (this.shortSideNav === false) {
+
+      this.navClassName = 'side-nav long-width-nav';
+      this.mainContentClassName = 'main-content short-width-main';
+    }
+    else {
+      this.navClassName = 'side-nav short-width-nav';
+      this.mainContentClassName = 'main-content long-width-main';
     }
   }
 
-  //---
+  selectedRowDetail(item: any, k: number) {
+    this.selectedIndex = item;
+    this.selectedIndex = k;
+  }
 }
-
-

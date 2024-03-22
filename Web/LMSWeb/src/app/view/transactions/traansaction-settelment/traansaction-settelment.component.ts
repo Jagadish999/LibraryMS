@@ -34,7 +34,7 @@ export class TraansactionSettelmentComponent implements OnInit {
 
     const currentUser:any = localStorage.getItem('user');
 
-    const chargeFee =  this.transactionDetail.holdingDay > this.transactionDetail.allowedHolding ? ((this.transactionDetail.holdingDay - this.transactionDetail.allowedHolding) * this.transactionDetail.charge) : 0;
+    const chargeFee =  this.transactionDetail.holdingDays > this.transactionDetail.allowedHolding ? ((this.transactionDetail.holdingDays - this.transactionDetail.allowedHolding) * this.transactionDetail.lateCharge) : 0;
 
     const json = {
       borrowId: this.transactionDetail.borrowId,

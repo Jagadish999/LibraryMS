@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BorrowService } from '../borrow.service';
+import { CustomerService } from '../../customer/customer.service';
 
 @Component({
   selector: 'app-borrow-form',
@@ -23,19 +24,20 @@ export class BorrowFormComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public snackBar: MatSnackBar,
     public dialogRef: MatDialogRef<BorrowFormComponent>,
-    public bs: BorrowService
-) {
+    public bs: BorrowService,
+    public cs: CustomerService
+  ) {
     if (this.data.mode.toLowerCase() === 'add') {
 
       console.log("From initialized");
-        this.borrowFormBuilder = this.fb.group({
-            bookName: fb.control('', [Validators.required]),
-            userName: fb.control('', [Validators.required])
-        });
+      this.borrowFormBuilder = this.fb.group({
+        bookName: fb.control('', [Validators.required]),
+        userName: fb.control('', [Validators.required])
+      });
     } else {
-        this.borrowFormBuilder = this.fb.group({});
+      this.borrowFormBuilder = this.fb.group({});
     }
-}
+  }
 
 
   ngOnInit(): void {
@@ -50,11 +52,11 @@ export class BorrowFormComponent implements OnInit {
     this.selectedUser = this.userDetails[0];
   }
 
-  userSelected(userDetails: any){
+  userSelected(userDetails: any) {
     this.selectedUser = userDetails;
   }
 
-  save(){
+  save() {
     const currentUser: any = localStorage.getItem('user');
     const json = {
       userId: this.selectedUser.userId,
@@ -65,7 +67,7 @@ export class BorrowFormComponent implements OnInit {
     console.log(json);
 
     this.bs.setBorrowDetail(json).subscribe(res => {
-      if(res){
+      if (res) {
         this.snackBar.open("Book Successfully Issued", "OK");
 
         this.dialogRef.close(res);

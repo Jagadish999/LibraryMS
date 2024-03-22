@@ -35,3 +35,12 @@ VALUES
 
 
 SELECT * FROM dbo.ListItem;
+
+
+SELECT * FROM dbo.Borrow;
+
+
+
+
+INSERT INTO dbo.[Borrow] ([UserId], [BookId], [BorrowedDate], [ReturnDueDate], [ReturnedDate], [Charge], [PaymentId], [UserPersonId])
+VALUES (5, 6, DATEADD(DAY, -400, GETDATE()), GETDATE(), NULL, NULL, NULL, 1);

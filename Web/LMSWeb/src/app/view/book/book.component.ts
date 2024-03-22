@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
 import { MatDialog } from '@angular/material/dialog';
 import { BookFormComponent } from './book-form/book-form.component';
+import { IssueBookComponent } from './issue-book/issue-book.component';
 
 @Component({
   selector: 'app-book',
@@ -37,8 +38,6 @@ export class BookComponent implements OnInit {
   dataSource: any;
   displayedColumns: string[] = [];
 
-  selectedIndex: any;
-
   constructor(public bs: BookService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -53,8 +52,6 @@ export class BookComponent implements OnInit {
       res => {
         this.dataSource = res.data;
         this.displayedColumns = res.column;
-
-        console.log(this.dataSource)
       }
     )
   }
@@ -65,7 +62,8 @@ export class BookComponent implements OnInit {
         data: '',
         mode: 'Add'
       },
-      disableClose: true
+      disableClose: true,
+      width: '30vw'
     });
 
     dialogRef.afterClosed().subscribe(res => {
@@ -74,8 +72,21 @@ export class BookComponent implements OnInit {
     });
   }
 
-  selectedRowDetail(row: any, i: number) {
-    this.selectedIndex = row;
-    this.selectedIndex = i;
+  issueBookForm(bookRow: any){
+
+    console.log(bookRow);
+    
+    const dialogRef = this.dialog.open(IssueBookComponent, {
+      data: {
+        bookDetails: bookRow,
+        mode: 'Add'
+      },
+      disableClose: true,
+      width: '30vw'
+    });
+
+    dialogRef.afterClosed().subscribe(res => {
+      this.getBookDetails();
+    })
   }
 }

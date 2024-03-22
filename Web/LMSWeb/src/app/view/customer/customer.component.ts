@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomerService } from './customer.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { Router } from '@angular/router';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-customer',
@@ -11,14 +13,15 @@ import { Router } from '@angular/router';
 })
 export class CustomerComponent implements OnInit {
 
-  dataSource: any;
+  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   displayedColumns: string[] = [];
   selectedIndex: any;
+
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
 
   membershipTypes: any;
   userTypes: any;
   paymentTypes: any;
-
 
   constructor(public cs: CustomerService, public dialog: MatDialog, public router: Router) { }
 
@@ -35,7 +38,8 @@ export class CustomerComponent implements OnInit {
 
       if (res) {
         
-        this.dataSource = res.data;
+        this.dataSource =  new MatTableDataSource<any>(res.data);
+        this.dataSource.paginator = this.paginator;
         this.displayedColumns = res.column;
         this.membershipTypes = res.membershipTypeDetails;
         this.userTypes = res.userTypes;

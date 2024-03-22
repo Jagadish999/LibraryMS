@@ -34,7 +34,6 @@ BEGIN
     ('bookTitle'),
     ('userId'),
 	('userName'),
-	('charge'),
 	('action');
 
     DECLARE @Col VARCHAR(MAX);
@@ -51,11 +50,13 @@ BEGIN
             bo.Title AS bookTitle,
             b.UserId AS userId,
             u.UserName AS userName,
-            b.Charge AS charge,
             (DATEDIFF(day, b.BorrowedDate, GETDATE())) AS holdingDays,
-            (DATEDIFF(day, b.BorrowedDate, b.ReturnDueDate)) AS allowedHolding
+            m.BorrowDuration AS allowedHolding,
+			m.LateReturnCharge AS lateCharge
         FROM dbo.Borrow b
         INNER JOIN dbo.[User] u ON u.UserId = b.UserId
+		INNER JOIN dbo.[CustomerMembership] cm ON cm.UserId = u.UserId
+		INNER JOIN dbo.[Membership] m ON cm.MembershipId = m.MembershipId
         INNER JOIN dbo.[Book] bo ON b.BookId = bo.BookId
         WHERE b.ReturnedDate IS NULL AND b.PaymentId IS NULL
         FOR JSON PATH) AS [data],

@@ -1,14 +1,55 @@
+<div class="transaction-wrapper">
 
-<div class="inv-detail">
-    <p>User Name: {{transactionDetail.userName}}</p>
-    <p>Book Name: {{transactionDetail.bookTitle}}</p>
-    <p>Book Holded Days: {{ transactionDetail.holdingDays }}</p>
-    <p>Fine: Rs {{ transactionDetail.holdingDay > transactionDetail.allowedHolding ? ((transactionDetail.holdingDay - transactionDetail.allowedHolding) * transactionDetail.charge) : '0' }}</p>
-    
-</div>
+    <h2>Settlement Details</h2>
 
-<div class="btn-lists">
+    <div class="inv-detail">
 
-    <button (click)="bookReturned()" class="return">Return Book</button>
-    <button [mat-dialog-close]="" class="close">Close</button>
+        <div class="wrapper">
+            <div class="title">
+                User Name:
+            </div>
+            <div class="value">
+                {{transactionDetail.userName}}
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="title">
+                Book Name:
+            </div>
+            <div class="value">
+                {{transactionDetail.bookTitle}}
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="title">
+                Book Holded Days:
+            </div>
+            <div class="value">
+                {{transactionDetail.holdingDays}}
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="title">
+                Fine:
+            </div>
+            <div class="value">
+                Rs {{
+                transactionDetail.holdingDays > transactionDetail.allowedHolding ?
+                ((transactionDetail.holdingDays - transactionDetail.allowedHolding) * transactionDetail.lateCharge) :
+                '0'
+                }}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="btn-lists">
+
+        <button  mat-raised-button color="primary" (click)="bookReturned()" class="return">Return Book</button>
+    </div>
+
+    <mat-icon [mat-dialog-close]="" class="mat-close-cross">close</mat-icon>
 </div>

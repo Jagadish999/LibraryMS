@@ -1,0 +1,48 @@
+<div class="dashboard-wrapper">
+
+    <h2>Dashboard</h2>
+
+    <div class="date-filter-form" [formGroup]="dateForm">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Starting Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="startDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ending Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="endDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class="dashboard-details">
+
+        <div class="detail">
+            <h3>Total Book Quantity</h3>
+            <p>{{dashboardData.totalBooks}}</p>
+        </div>
+
+        <div class="detail">
+            <h3>Total Issued Books</h3>
+            <p>{{dashboardData.totalIssuedBooks}}</p>
+        </div>
+
+        <div class="detail">
+            <h3>Total Revenue</h3>
+            <p>{{dashboardData.totalRevenue}}</p>
+        </div>
+
+        <div class="detail">
+            <h3>Total Users</h3>
+            <p>{{dashboardData.totalUser}}</p>
+        </div>
+
+    </div>
+</div>

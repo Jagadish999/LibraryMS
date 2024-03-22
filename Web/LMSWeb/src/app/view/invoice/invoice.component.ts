@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { InvoiceService } from './invoice.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-invoice',
@@ -8,9 +10,11 @@ import { InvoiceService } from './invoice.service';
 })
 export class InvoiceComponent implements OnInit {
 
-  dataSource: any;
+  dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   displayedColumns: string[] = [];
   selectedIndex: any;
+
+  @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator; 
 
   constructor(public is: InvoiceService) { }
 
@@ -24,12 +28,9 @@ export class InvoiceComponent implements OnInit {
     this.is.getInvoiceDetails(json).subscribe(res => {
       console.log(res);
 
-      this.dataSource = res[0].paymentDetails;
+      this.dataSource =  new MatTableDataSource<any>(res[0].paymentDetails);
+      this.dataSource.paginator = this.paginator;
       this.displayedColumns = res[0].column;
-
-      console.log(this.dataSource);
-      console.log(this.displayedColumns);
-
     })
   }
 

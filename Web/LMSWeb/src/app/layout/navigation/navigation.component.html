@@ -1,5 +1,64 @@
 <div class="main-wrapper">
 
+    <div class={{navClassName}}>
+
+        <div class="menu-icon">
+
+            <button mat-icon-button *ngIf="shortSideNav === true" (click)="changeSideNavSize()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <button mat-icon-button *ngIf="shortSideNav === false" (click)="changeSideNavSize()">
+                <mat-icon>close</mat-icon>
+            </button>
+
+        </div>
+
+        <div class="side-nav-links">
+
+            <mat-list role="list" *ngFor="let item of navigationList; let k = index" (click)="selectedRowDetail(item,k)"
+                [class.selected]="selectedIndex === k">
+                <mat-list-item role="listitem">
+                    <a routerLink="{{item.navigationUrl}}" class="link-urls">
+
+                        <mat-icon>{{item.icon}}</mat-icon>
+
+                        <span *ngIf="shortSideNav === false">
+
+                            {{item.navigationName}}
+                        </span>
+
+                    </a>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
+    </div>
+
+    <div class={{mainContentClassName}}>
+
+        <div class="main-content-heading">
+
+            <mat-toolbar>
+
+                <span class="mainheader">Library Management System</span>
+                <span class="spacer"></span>
+                <span class="logout-tbl" (click)="logout()"> <mat-icon>exit_to_app</mat-icon> Log Out</span>
+
+            </mat-toolbar>
+        </div>
+
+        <div class="main-content-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="main-wrapper">
+
     <p class="all-heading">
         <mat-toolbar color="primary">
             <button mat-icon-button
@@ -33,4 +92,4 @@
     
     </mat-drawer-container>
 
-</div>
+</div> -->

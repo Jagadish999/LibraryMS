@@ -22,10 +22,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatButtonModule } from '@angular/material/button';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { IssueBookComponent } from './issue-book/issue-book.component';
+
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 @NgModule({
   declarations: [
     BookComponent,
-    BookFormComponent
+    BookFormComponent,
+    IssueBookComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +46,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatAutocompleteModule
   ]
 })
 export class BookModule { }

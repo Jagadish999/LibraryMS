@@ -12,6 +12,8 @@ namespace LMS.Application.Service.Common
         string getCustomerBorrowedBooks(String Json);
 
         string getCustomerSpecificPayment(String Json);
+
+        string getAdminDashboardData(String Json);
     }
 
 

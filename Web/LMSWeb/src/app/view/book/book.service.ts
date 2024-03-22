@@ -21,4 +21,8 @@ export class BookService {
 
     return this.http.post(this.apiUrl + 'Book/SetBookTsk', { json: JSON.stringify(json) })
   }
+
+  setBorrowDetail(json: any): Observable<any>{
+    return this.http.post(this.apiUrl  + 'Borrow/SetBorrowDetail', {json: JSON.stringify(json)})
+  }
 }

@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
 
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     CustomerBookComponent
@@ -16,7 +18,8 @@ import { MatTableModule } from '@angular/material/table';
     CommonModule,
     CustomerBookRoutingModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ]
 })
 export class CustomerBookModule { }

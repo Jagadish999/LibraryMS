@@ -1,8 +1,16 @@
-// .mat-icon {
-//     font-size: 20px;
-//     vertical-align: middle;
-//     margin-left: 5px;
-// }
+.book-wrapper{
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: #fff;
+
+    h2{
+        margin-bottom: 20px;
+        color: #333;
+        margin-left: 3%;
+        font-weight: bolder;
+    }
+}
 
 .container {
     display: flex;
@@ -45,7 +53,6 @@ p {
 }
 
 .book-details {
-    // border: 1px solid black;
     margin-bottom: 20px;
 }
 
@@ -67,4 +74,27 @@ p {
     bottom: 20px;
     right: 20px;
     border-radius: 50%;
+}
+
+
+.action-button {
+    margin-top: 8px;
+    color: #fff;
+    background-color: #1976d2;
+    border: 1px solid #1976d2;
+    border-radius: 4px; 
+    padding: 4px 16px;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.action-button mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.mat-paginator-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }

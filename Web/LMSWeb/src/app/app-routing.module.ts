@@ -11,9 +11,10 @@ const routes: Routes = [
   {
     path: 'navigation', component: NavigationComponent, canActivate: [AuthGuard],
     children: [
+      { path: 'dashboard', loadChildren: () => import('./view/dashboard/dashboard.module').then(m => m.DashboardModule)},
       { path: 'customer', loadChildren: () => import('./view/customer/customer.module').then(m => m.CustomerModule) },
       { path: 'book', loadChildren: () => import('./view/book/book.module').then(m => m.BookModule)},
-      { path: 'borrow', loadChildren: () => import('./view/borrow/borrow.module').then(m => m.BorrowModule)},
+      //{ path: 'borrow', loadChildren: () => import('./view/borrow/borrow.module').then(m => m.BorrowModule)},
       { path: 'transaction', loadChildren: () => import('./view/transactions/transaction.module').then(m => m.TransactionModule)},
       { path: 'invoice', loadChildren: () => import('./view/invoice/invoice.module').then(m => m.InvoiceModule)},
       { path: 'customer-book',loadChildren: () => import('./view/customerBook/customer-book.module').then(m => m.CustomerBookModule)},

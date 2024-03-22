@@ -41,6 +41,7 @@ export class TransactionComponent implements OnInit {
         mode: "show"
       },
       disableClose: true,
+      width: '40vw'
     });
 
     dialogRef.afterClosed().subscribe(res => {

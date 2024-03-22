@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { TraansactionSettelmentComponent } from './traansaction-settelment/traansaction-settelment.component';
 
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     TransactionComponent,
@@ -22,7 +24,8 @@ import { TraansactionSettelmentComponent } from './traansaction-settelment/traan
     HttpClientModule,
     MatDialogModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule
   ]
 })
 export class TransactionModule { }

@@ -67,7 +67,7 @@ export class AddCustomerComponent implements OnInit {
       this.customerDetailForm_1 = this.fb.group({
         fullName: this.fb.control('', [Validators.required, Validators.maxLength(50)]),
         email: this.fb.control('', [Validators.required, Validators.email, Validators.maxLength(50)]),
-        password: this.fb.control('', [Validators.required, Validators.maxLength(25)]),
+        password: this.fb.control('', [Validators.required, Validators.maxLength(25), Validators.minLength(8)]),
         userName: this.fb.control('', [Validators.required, Validators.maxLength(25)]),
         phone: this.fb.control('', [Validators.required, Validators.maxLength(10), Validators.pattern(/^\d+$/)])
       });
@@ -96,7 +96,7 @@ export class AddCustomerComponent implements OnInit {
       this.customerDetailForm_1.get('email')?.setValue(this.data.currentUserDetail.email);
       this.customerDetailForm_1.get('userName')?.setValue(this.data.currentUserDetail.userName);
       this.customerDetailForm_1.get('phone')?.setValue(this.data.currentUserDetail.phone);
-      this.customerDetailForm_2.get('membershipType')?.setValue(this.selectedMemberShip.membershipTypeName)
+      this.customerDetailForm_2.get('membershipType')?.setValue(this.selectedMemberShip.membershipTypeName);
     }
   }
 
@@ -108,10 +108,9 @@ export class AddCustomerComponent implements OnInit {
   save() {
 
     const currentUser: any = localStorage.getItem('user');
-
     let json: any;
 
-    if(this.data.mode.toLowerCase() === 'add'){
+    if (this.data.mode.toLowerCase() === 'add') {
 
       json = {
         fullName: this.customerDetailForm_1.get('fullName')?.value,
@@ -125,17 +124,15 @@ export class AddCustomerComponent implements OnInit {
         userName: this.customerDetailForm_1.get('userName')?.value
       };
     }
-    else{
-    json = {
-      fullName: this.customerDetailForm_1.get('fullName')?.value,
-      email: this.customerDetailForm_1.get('email')?.value,
-      phone: this.customerDetailForm_1.get('phone')?.value,
-      userName: this.customerDetailForm_1.get('userName')?.value
-    };
+    else {
+      json = {
+        userId: this.data.currentUserDetail.userId,
+        fullName: this.customerDetailForm_1.get('fullName')?.value,
+        email: this.customerDetailForm_1.get('email')?.value,
+        phone: this.customerDetailForm_1.get('phone')?.value,
+        userName: this.customerDetailForm_1.get('userName')?.value
+      };
     }
-
-
-    console.log(json);
 
     this.cs.setUser(json).subscribe(
       res => {

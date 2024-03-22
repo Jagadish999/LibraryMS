@@ -283,6 +283,50 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 			return CreateSpCustPaymentInvoiceSelCall(dataAccessProvider, json).ToRetrievalQuery();
 		}
 
+		/// <summary>Calls stored procedure 'SpDashboardSel'.<br/><br/></summary>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpDashboardSel(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return SpDashboardSel(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Calls stored procedure 'SpDashboardSel'.<br/><br/></summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter. </param>
+		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
+		public static DataTable SpDashboardSel(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			using(StoredProcedureCall call = CreateSpDashboardSelCall(dataAccessProvider, json))
+			{
+				DataTable toReturn = call.FillDataTable();
+				return toReturn;
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpDashboardSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpDashboardSelCallAsQuery(System.String json)
+		{
+			using(var dataAccessProvider = new DataAccessAdapter())
+			{
+				return GetSpDashboardSelCallAsQuery(json, dataAccessProvider);
+			}
+		}
+
+		/// <summary>Creates an IRetrievalQuery object for a call to the procedure 'SpDashboardSel'.</summary>
+		/// <param name="json">Input parameter of stored procedure</param>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <returns>IRetrievalQuery object which is ready to use for datafetching</returns>
+		public static IRetrievalQuery GetSpDashboardSelCallAsQuery(System.String json, IDataAccessCore dataAccessProvider)
+		{
+			return CreateSpDashboardSelCall(dataAccessProvider, json).ToRetrievalQuery();
+		}
+
 		/// <summary>Calls stored procedure 'SpPaymentInvoiceSel'.<br/><br/></summary>
 		/// <param name="json">Input parameter. </param>
 		/// <returns>Filled DataTable with resultset(s) of stored procedure</returns>
@@ -428,6 +472,16 @@ namespace LMS.Application.LLBL.DatabaseSpecific
 		private static StoredProcedureCall CreateSpCustPaymentInvoiceSelCall(IDataAccessCore dataAccessProvider, System.String json)
 		{
 			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpCustPaymentInvoiceSel]", "SpCustPaymentInvoiceSel")
+							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
+		}
+
+		/// <summary>Creates the call object for the call 'SpDashboardSel' to stored procedure 'SpDashboardSel'.</summary>
+		/// <param name="dataAccessProvider">The data access provider.</param>
+		/// <param name="json">Input parameter</param>
+		/// <returns>Ready to use StoredProcedureCall object</returns>
+		private static StoredProcedureCall CreateSpDashboardSelCall(IDataAccessCore dataAccessProvider, System.String json)
+		{
+			return new StoredProcedureCall(dataAccessProvider, @"[Jagadish_LibraryMS].[dbo].[SpDashboardSel]", "SpDashboardSel")
 							.AddParameter("@Json", "NVarChar", 2147483647, ParameterDirection.Input, true, 0, 0, json);
 		}
 

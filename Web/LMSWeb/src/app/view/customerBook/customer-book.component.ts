@@ -13,14 +13,41 @@ export class CustomerBookComponent implements OnInit {
 
   selectedIndex: any;
 
+  bookImages = [
+    "https://via.placeholder.com/150?text=Book1",
+    "https://via.placeholder.com/150?text=Book2",
+    "https://via.placeholder.com/150?text=Book3",
+    "https://via.placeholder.com/150?text=Book4",
+    "https://via.placeholder.com/150?text=Book5",
+    "https://via.placeholder.com/150?text=Book6",
+    "https://via.placeholder.com/150?text=Book7",
+    "https://via.placeholder.com/150?text=Book8",
+    "https://via.placeholder.com/150?text=Book9",
+    "https://via.placeholder.com/150?text=Book10",
+    "https://via.placeholder.com/150?text=Book11",
+    "https://via.placeholder.com/150?text=Book12",
+    "https://via.placeholder.com/150?text=Book13",
+    "https://via.placeholder.com/150?text=Book14",
+    "https://via.placeholder.com/150?text=Book15",
+    "https://via.placeholder.com/150?text=Book16",
+    "https://via.placeholder.com/150?text=Book17",
+    "https://via.placeholder.com/150?text=Book18",
+    "https://via.placeholder.com/150?text=Book19",
+    "https://via.placeholder.com/150?text=Book20"
+  ];
+
+  currentUser: any;
+
   constructor(public cbs: CustomerBookService) { }
 
   ngOnInit(): void {
 
+    const user: any = localStorage.getItem('user');
+    this.currentUser = JSON.parse(user);
     this.getCustomerBookDetails();
   }
 
-  getCustomerBookDetails(){
+  getCustomerBookDetails() {
 
     const currentUser: any = localStorage.getItem('user');
     const json = {

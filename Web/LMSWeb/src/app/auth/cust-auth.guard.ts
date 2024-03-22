@@ -16,7 +16,14 @@ export class CustAuthGuard implements CanActivate {
 
     const currentUser: any = localStorage.getItem('user');
 
-    if (currentUser && JSON.parse(currentUser).userType === 'REGULAR') return true;
+    if (currentUser && JSON.parse(currentUser).userType === 'REGULAR'){
+      return true;
+    }
+    else if(currentUser && JSON.parse(currentUser).userType === 'ADMIN'){
+
+      this.router.navigate(['navigation/customer']);
+    }
+      
 
     this._location.back();
     return false;

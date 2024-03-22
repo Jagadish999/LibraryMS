@@ -1,73 +1,88 @@
+<div class="book-wrapper">
 
-<h1>Book Details</h1>
+    <h2>Book Details</h2>
 
-<div class="container">
-    <mat-card *ngFor="let book of dataSource; let i = index" class="book-card">
-        <div class="card-content">
-            <img mat-card-image [src]="bookImages[i]" alt="Book Image">
-            <mat-card-content>
-                <div class="book-details">
-                    
-                    <div class="title">
-                        <div class="titleHead">
-                            <span class="title">Title:</span>
+    <div class="container">
+        <mat-card *ngFor="let book of dataSource; let i = index" class="book-card">
+            <div class="card-content">
+                <img mat-card-image [src]="bookImages[i]" alt="Book Image">
+                <mat-card-content>
+                    <div class="book-details">
+
+                        <div class="title">
+                            <div class="titleHead">
+                                <span class="title">Title:</span>
+                            </div>
+                            <div class="titleDetail">
+                                <span class="value">{{ book.title }}</span>
+                            </div>
                         </div>
-                        <div class="titleDetail">
-                            <span class="value">{{ book.title }}</span>
+
+                        <div class="author">
+                            <div class="titleHead">
+                                <span class="title">Author:</span>
+                            </div>
+                            <div class="titleDetail">
+                                <span class="value">{{ book.author }}</span>
+                            </div>
                         </div>
+
+                        <div class="genre">
+                            <div class="titleHead">
+                                <span class="title">Genre:</span>
+                            </div>
+                            <div class="titleDetail">
+                                <span class="value">{{ book.genre }}</span>
+                            </div>
+                        </div>
+
+                        <div class="quantity">
+                            <div class="titleHead">
+                                <span class="title">Quantity:</span>
+                            </div>
+                            <div class="titleDetail">
+                                <span class="value">{{ book.quantity }}</span>
+                            </div>
+                        </div>
+
+
+                        <div class="availableQuantity">
+
+                            <div class="titleHead">
+                                <span class="title">Available:</span>
+                            </div>
+                            <div class="titleDetail">
+                                <span class="value">{{ book.availableQuantity }}</span>
+                            </div>
+                        </div>
+
+
                     </div>
-                    
-                    <div class="author">
-                        <div class="titleHead">
-                            <span class="title">Author:</span>
-                        </div>
-                        <div class="titleDetail">
-                            <span class="value">{{ book.author }}</span>
-                        </div>
+                    <div class="available-status">
+
+                        <b>Available Status:</b>
+                        <mat-icon [style.color]="book.availableQuantity > 0 ? 'green' : 'red'">
+                            {{ book.availableQuantity > 0 ? 'check_circle' : 'cancel' }}
+                        </mat-icon>
                     </div>
-                    
-                    <div class="genre">
-                        <div class="titleHead">
-                            <span class="title">Genre:</span>
-                        </div>
-                        <div class="titleDetail">
-                            <span class="value">{{ book.genre }}</span>
-                        </div>
+
+                    <div class="borrow-book">
+
+                        <button mat-button color="primary" class="action-button" [disabled]="book.availableQuantity < 1"
+                            (click)="issueBookForm(book)">
+                            <mat-icon>swap_horizontal</mat-icon> ISSUE
+                        </button>
                     </div>
-                    
-                    <div class="quantity">
-                        <div class="titleHead">
-                            <span class="title">Quantity:</span>
-                        </div>
-                        <div class="titleDetail">
-                            <span class="value">{{ book.quantity }}</span>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="availableQuantity">
-                        
-                        <div class="titleHead">
-                            <span class="title">Available:</span>
-                        </div>
-                        <div class="titleDetail">
-                            <span class="value">{{ book.availableQuantity }}</span>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-                <b>Available Status:</b>
-                <mat-icon [style.color]="book.availableQuantity > 0 ? 'green' : 'red'">
-                    {{ book.availableQuantity > 0 ? 'check_circle' : 'cancel' }}
-                </mat-icon>
-            </mat-card-content>
-        </div>
-    </mat-card>
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="mat-paginator-wrapper">
+    </div>
 </div>
-    <!-- <button (click)="openForm()"><mat-icon>add</mat-icon> ADD BOOK</button> -->
 
 
-    <button mat-fab color="primary" class="add-button" (click)="openForm()">
-        <mat-icon>add</mat-icon>
-    </button>
+<button mat-fab color="primary" class="add-button" (click)="openForm()">
+    <mat-icon>add</mat-icon>
+</button>

@@ -1,48 +1,88 @@
-/* Assuming this component is named transaction-detail.component.css */
+.transaction-wrapper{
+  position: relative;
 
-/* Styles for the container div */
-.inv-detail {
+  h2{
     margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    text-align: center;
   }
-  
-  /* Styles for the paragraph elements */
-  p {
-    margin: 5px 0;
-  }
-  
-  /* Styles for the buttons */
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+}
+
+
+.mat-close-cross{
+    position: absolute;
+    top: -10px;
+    right: 0px;
+
+    font-size: 40px;
     cursor: pointer;
-  }
-  
-  /* Styles for the close button */
-  .close {
-    background-color: #e35555;
-    color: #fefafa;
-  }
-  
-  /* Styles for the return button */
-  .return {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
+}
 
-  .btn-lists{
-    display: flex;
-    flex-direction: row;
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 18px;
+}
 
-    justify-content: space-evenly;
-  }
+.title {
+  padding: 10px;
+  width: 60%;
+  font-weight: bold;
+  border-right: 1px solid black;
+}
+
+.value {
+  padding-left: 10px;
+  width: 30%;
+}
+
+
+
+// /* Assuming this component is named transaction-detail.component.css */
+
+// /* Styles for the container div */
+// .inv-detail {
+//     margin: 20px;
+//     padding: 20px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//   }
+  
+//   /* Styles for the paragraph elements */
+//   p {
+//     margin: 5px 0;
+//   }
+  
+//   /* Styles for the buttons */
+//   button {
+//     margin-top: 10px;
+//     padding: 10px 20px;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//   }
+  
+//   /* Styles for the close button */
+//   .close {
+//     background-color: #e35555;
+//     color: #fefafa;
+//   }
+  
+//   /* Styles for the return button */
+//   .return {
+//     background-color: #007bff;
+//     color: #fff;
+//   }
+  
+//   /* Hover effect for buttons */
+//   button:hover {
+//     opacity: 0.8;
+//   }
+
+//   .btn-lists{
+//     display: flex;
+//     flex-direction: row;
+
+//     justify-content: space-evenly;
+//   }
   

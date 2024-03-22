@@ -1,0 +1,39 @@
+.dashboard-wrapper {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: #ffffff;
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+        margin-left: 3%;
+        font-weight: bolder;
+    }
+
+    .date-filter-form{
+        border: 1px solid black;
+        padding: 30px;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-details{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+    }
+
+    .detail{
+        padding: 25px;
+        border: 1px solid black;
+        width: 15%;
+        text-align: center;
+
+        h3{
+            font-weight: bold;
+        }
+    }
+}

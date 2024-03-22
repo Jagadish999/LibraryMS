@@ -18,11 +18,14 @@ export class AdminGuardGuard implements CanActivate {
 
     const currentUser: any = localStorage.getItem('user');
 
-    if (currentUser && JSON.parse(currentUser).userType === 'ADMIN') return true;
+    if (currentUser && JSON.parse(currentUser).userType === 'ADMIN'){
+      
+      return true;
+    }
+    else if(JSON.parse(currentUser).userType === 'REGULAR'){
 
-    this._location.back();
+      this.router.navigate(['navigation/customer-book']);
+    }
     return false;
-
   }
-
 }

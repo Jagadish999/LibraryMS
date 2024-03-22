@@ -1,0 +1,34 @@
+<div class="issue-form-wrapper">
+    <mat-card-header>
+        <mat-card-title>Issue Book Borrow</mat-card-title>
+    </mat-card-header>
+
+    <mat-icon [mat-dialog-close]="" class="mat-close-cross">close</mat-icon>
+
+    <mat-card-content [formGroup]="borrowFormBuilder">
+
+        <mat-form-field>
+            <mat-label>Book Title</mat-label>
+            <mat-select matSelect formControlName="bookName">
+                 <mat-option [value]="bookDetails.title">
+                    {{ bookDetails.title }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>User Name</mat-label>
+            <mat-select matSelect formControlName="userName">
+                 <mat-option [value]="bookDetails.title" *ngFor="let user of userDetails" [value]="user.userName"  (click)="userSelected(user)">
+                    {{ user.userName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="save()" [disabled]="borrowFormBuilder.invalid">Borrow</button>
+        </mat-card-actions>
+
+    </mat-card-content>
+
+</div>

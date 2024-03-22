@@ -190,6 +190,11 @@
         <Parameter Name="Json" Type="string" MaxLength="2147483647" />
       </Parameters>
     </SPCallDefinition>
+    <SPCallDefinition Name="SpDashboardSel" ObjectID="370e53ff-1063-466a-883e-38f9c5de4001">
+      <Parameters>
+        <Parameter Name="Json" Type="string" MaxLength="2147483647" />
+      </Parameters>
+    </SPCallDefinition>
     <SPCallDefinition Name="SpPaymentInvoiceSel" ObjectID="29ec32f7-9504-408f-9f79-2132ffe1fbef">
       <Parameters>
         <Parameter Name="Json" Type="string" MaxLength="2147483647" />
@@ -221,7 +226,7 @@
       <Catalogs>
         <Catalog Name="Jagadish_LibraryMS">
           <Schemas>
-            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2024-03-18T06:13:56.6271131Z">
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2024-03-20T09:30:57.3325178Z">
               <StoredProcedures>
                 <StoredProcedure Name="SpBookDetailTsk">
                   <Parameters>
@@ -294,6 +299,18 @@
                   </Resultsets>
                 </StoredProcedure>
                 <StoredProcedure Name="SpCustPaymentInvoiceSel" NumberOfResultsets="1">
+                  <Parameters>
+                    <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
+                  </Parameters>
+                  <Resultsets>
+                    <Resultset Name="Resultset1">
+                      <Fields>
+                        <Field Name="Json" Ordinal="1" IsOptional="true" DbType="12" Length="2147483647" />
+                      </Fields>
+                    </Resultset>
+                  </Resultsets>
+                </StoredProcedure>
+                <StoredProcedure Name="SpDashboardSel" NumberOfResultsets="1">
                   <Parameters>
                     <Parameter Name="@Json" Direction="1" Ordinal="1" DbType="12" Length="2147483647" />
                   </Parameters>
@@ -382,6 +399,11 @@
           </FieldMappings>
         </SPCallMapping>
         <SPCallMapping SPCallName=":SpCustPaymentInvoiceSel" TargetName="Jagadish_LibraryMS:dbo:SpCustPaymentInvoiceSel">
+          <FieldMappings>
+            <FieldMapping FieldName="Json" TargetFieldName="@Json" />
+          </FieldMappings>
+        </SPCallMapping>
+        <SPCallMapping SPCallName=":SpDashboardSel" TargetName="Jagadish_LibraryMS:dbo:SpDashboardSel">
           <FieldMappings>
             <FieldMapping FieldName="Json" TargetFieldName="@Json" />
           </FieldMappings>

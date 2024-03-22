@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     // if (localStorage.getItem('user')) {
     //   this.router.navigate(['navigation/customer']);
     // }
-    
+
     this.loginDetails = this.fb.group({
       email: fb.control('parajulijagadish9@gmail.com', [Validators.required, Validators.maxLength(50), Validators.email]),
       password: fb.control('password123', [Validators.required, Validators.maxLength(20), Validators.minLength(8)])
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-     
+
     const json = {
       emailAddress: this.loginDetails.get('email')?.value,
       password: this.loginDetails.get('password')?.value
@@ -62,9 +62,19 @@ export class LoginComponent implements OnInit {
         else {
 
           const loggedUser = res[0];
+          const user = JSON.stringify(loggedUser);
+          localStorage.setItem('user', user);
 
-          localStorage.setItem('user', JSON.stringify(loggedUser));
-          this.router.navigate(['navigation']);
+          if (loggedUser.userType === 'ADMIN') {
+
+            this.router.navigate(['navigation/customer']);
+            console.log('admin');
+          }
+          else {
+            console.log('customer')
+            this.router.navigate(['navigation/customer-book']);
+          }
+
 
           this.snackBar.open("Welcome, " + loggedUser.fullName, "OK", {
             duration: 3000

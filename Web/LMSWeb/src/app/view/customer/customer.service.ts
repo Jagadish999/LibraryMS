@@ -23,8 +23,4 @@ export class CustomerService {
     const params = new HttpParams().set('json', JSON.stringify(json));
     return this.http.get(this.apiUrl + 'Common/GetCustomerTblDetail', {params});
   }
-
-  // get formFiled required for adding customer
-  
-
 }

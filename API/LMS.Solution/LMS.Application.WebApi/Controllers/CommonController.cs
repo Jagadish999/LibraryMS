@@ -8,7 +8,6 @@ namespace LMS.Application.WebApi.Controllers
     [Route("api/[controller]/[action]")]
     public class CommonController: ControllerBase
     {
-        
         ICommonService _commonService;
 
         public CommonController(ICommonService commonService)
@@ -37,6 +36,34 @@ namespace LMS.Application.WebApi.Controllers
             {
                 var books = _commonService.getCustomerBorrowedBooks(Json);
                 return Ok(books);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetCustomerPayments(string Json)
+        {
+            try
+            {
+                var payments = _commonService.getCustomerSpecificPayment(Json);
+                return Ok(payments);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult GetAdminDashboardData(string Json)
+        {
+            try
+            {
+                var dashboardData = _commonService.getAdminDashboardData(Json);
+                return Ok(dashboardData);
             }
             catch (Exception ex)
             {

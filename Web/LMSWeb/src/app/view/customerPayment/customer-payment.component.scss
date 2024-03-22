@@ -1,0 +1,58 @@
+
+.invoice-wrapper {
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.invoice-wrapper h2 {
+    margin-bottom: 20px;
+    color: #333;
+    margin-left: 3%;
+    font-weight: bolder;
+}
+
+.invoice-wrapper table {
+    width: 100%;
+    box-shadow: none;
+    border-collapse: collapse;
+}
+
+.invoice-wrapper th{
+    background-color: #878181;
+    color: #fff
+}
+
+.invoice-wrapper tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.invoice-wrapper tr:nth-child(even) {
+    background-color: #fff; 
+}
+
+.invoice-wrapper .action-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #1976d2;
+}
+
+.invoice-wrapper .action-button mat-icon {
+    margin-right: 5px;
+}
+
+.invoice-wrapper .mat-paginator-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.invoice-wrapper .add-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
